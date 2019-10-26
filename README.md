@@ -22,14 +22,13 @@ Originally forked from https://github.com/SleepyMario/phantombot-docker and fixe
 * Finally open ports 25000-25004 of your firewall.
 ```sh
 docker run -it \ 
-	-v /PATH/TO/botlogin.txt:/phantombot/config/botlogin.txt \
-	-v /PATH/TO/phantombot.db:/phantombot/config/phantombot.db \
-	-v /PATH/TO/keystore.jks:/phantombot/config/keystore.jks \
+	-v /PATH/TO/BOT:/phantombot/config \
 	-v /PATH/TO/BACKUP/:/backup \
 	-v /etc/localtime:/etc/localtime:ro \
 	--net=host \
-	sleepiestmario/phantombot:stable
+	daevien/phantombot
 ```
+(Personally, I use /DOCKER_ROOT/phantombot as the /PATH/TO/BOT, the original source of this docker uses specific mapping to files but I've changed it to map the whole directory as I'm intending to add in some customization.
 
 # All botlogin.txt arguments
 Below are all the args for use on twitch with any of the following optionally enabled: HTTPS, Mariadb/MySQL, Streamlabs, Gamewisp, Discord, Twitter and Youtube.

@@ -1,6 +1,6 @@
 # Base docker image
 FROM openjdk:8-jre-alpine
-LABEL maintainer "Sleepy Mario <theonesleepymario@gmail.com>"
+LABEL maintainer "Daevien <github@daevien.com>"
 
 # environment variables
 ARG PV=3.0.0

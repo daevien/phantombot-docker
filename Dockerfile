@@ -1,5 +1,7 @@
 # Base docker image
-FROM openjdk:8-jre-alpine
+#FROM openjdk:8-jre-alpine
+FROM lpicanco/java11-alpine
+#adoptopenjdk/openjdk11
 LABEL maintainer "Daevien <github@daevien.com>"
 
 # environment variables
@@ -7,7 +9,7 @@ ARG PV=3.2.0
 ARG DATE="`/bin/date +\%Y-\%m-\%d-\%H_\%M_\%S_\%3N`"
 
 # Install Dependencies
-RUN apk add --no-cache bash curl wget unzip
+RUN apk add --no-cache bash curl wget unzip sudo
 
 # phantombot installation
 RUN mkdir -p /root/tmp && \
@@ -40,8 +42,3 @@ RUN chmod a+x /start-phantombot
 # Run
 #CMD ./wrapper.sh
 CMD ./launch_service.sh
-
-
-
-
-

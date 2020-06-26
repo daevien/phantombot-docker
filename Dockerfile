@@ -19,7 +19,7 @@ RUN mkdir -p /root/tmp && \
         rm PhantomBot-${PV}-lin.zip && \
         mkdir /phantombot && \
         mv PhantomBot-${PV}/PhantomBot-${PV}/* /phantombot && \
-        sudo chmod u+x /phantombot/launch-service.sh /phantombot/launch.sh /phantombot/java-runtime-linux/bin/java
+        sudo chmod u+x /phantombot/launch-service.sh /phantombot/launch.sh /phantombot/java-runtime-linux/bin/java ./java-runtime-linux/bin/java
 
 # remove leftovers
 RUN apk del --no-cache wget unzip
@@ -41,7 +41,9 @@ RUN chmod a+x /start-phantombot
 
 # Run
 #CMD ./wrapper.sh
-#CMD ./launch_service.sh
+#CMD ./launch_service.sh 
 CMD java -jar PhantomBot.jar
+
+
 
 

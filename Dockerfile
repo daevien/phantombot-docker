@@ -3,7 +3,7 @@ FROM openjdk:8-jre-alpine
 LABEL maintainer "Daevien <github@daevien.com>"
 
 # environment variables
-ARG PV=3.0.0
+ARG PV=3.2.0
 ARG DATE="`/bin/date +\%Y-\%m-\%d-\%H_\%M_\%S_\%3N`"
 
 # Install Dependencies

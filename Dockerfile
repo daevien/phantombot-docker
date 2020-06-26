@@ -41,4 +41,7 @@ RUN chmod a+x /start-phantombot
 
 # Run
 #CMD ./wrapper.sh
-CMD ./launch_service.sh
+#CMD ./launch_service.sh
+CMD java -jar PhantomBot.jar
+
+

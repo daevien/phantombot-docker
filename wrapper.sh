@@ -21,7 +21,7 @@ function setProp {
 }
 
 setProp "apioauth" "$APIOAUTH"
-#setProp "baseport" "$BASEPORT"
+setProp "baseport" "$BASEPORT"
 setProp "channel" "$CHANNEL"
 setProp "clientid" "$CLIENTID"
 setProp "musicenable" "$MUSICENABLE"

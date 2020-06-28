@@ -1,4 +1,5 @@
 #!/bin/bash
+# script originally from https://github.com/aldovc/phantombot and then modified for additional options
 
 export BOTLOGIN=/phantombot/config/botlogin.txt
 
@@ -20,6 +21,7 @@ function setProp {
 }
 
 setProp "apioauth" "$APIOAUTH"
+#setProp "baseport" "$BASEPORT"
 setProp "channel" "$CHANNEL"
 setProp "clientid" "$CLIENTID"
 setProp "musicenable" "$MUSICENABLE"
@@ -49,6 +51,11 @@ setProp "youtubekey" "$YOUTUBEKEY"
 setProp "ytauth" "$YTAUTH"
 setProp "discord_token" "$DISCORD_TOKEN"
 setProp "twitch_tcp_nodelay" "$TWITCH_TCP_NODELAY"
+setProp "msglimit30" "$MSGLIMIT30"
+setProp "usehttps" "$USEHTTPS"
+setProp "whisperlimit60" "$WHISPERLIMIT60"
+setProp "ytauthro" "$YTAUTHRO"
+
 
 echo "Done setting variables..."
 

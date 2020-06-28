@@ -14,12 +14,12 @@ RUN apk add --no-cache bash curl wget unzip sudo
 # phantombot installation
 RUN mkdir -p /root/tmp && \
         cd /root/tmp && \
-        wget https://github.com/PhantomBot/PhantomBot/releases/download/v${PV}/PhantomBot-${PV}-lin.zip && \
-        unzip PhantomBot-${PV}-lin.zip && \
-        rm PhantomBot-${PV}-lin.zip && \
+        wget https://github.com/PhantomBot/PhantomBot/releases/download/v${PV}/PhantomBot-${PV}.zip && \
+        unzip PhantomBot-${PV}.zip && \
+        rm PhantomBot-${PV}.zip && \
         mkdir /phantombot && \
-        mv PhantomBot-${PV}/PhantomBot-${PV}/* /phantombot && \
-        sudo chmod u+x /phantombot/launch-service.sh /phantombot/launch.sh /phantombot/java-runtime-linux/bin/java ./java-runtime-linux/bin/java
+        mv PhantomBot-${PV}/* /phantombot && \
+        chmod u+x /phantombot/launch-service.sh /phantombot/launch.sh /phantombot/java-runtime-linux/bin/java
 
 # remove leftovers
 RUN apk del --no-cache wget unzip
@@ -34,16 +34,10 @@ RUN chmod a+x /var/spool/cron/crontabs/root
 # Cron job + wrapper script
 RUN echo "crond" > /start-crond
 RUN echo "cd phantombot && ./launch-service.sh" > /start-phantombot
-#COPY wrapper.sh /wrapper.sh
+COPY wrapper.sh /wrapper.sh
 RUN chmod a+x /start-crond
 RUN chmod a+x /start-phantombot
-#RUN chmod a+x /wrapper.sh
+RUN chmod a+x /wrapper.sh
 
 # Run
-#CMD ./wrapper.sh
-#CMD ./launch_service.sh 
-CMD java -jar PhantomBot.jar
-
-
-
-
+CMD /wrapper.sh

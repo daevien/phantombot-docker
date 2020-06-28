@@ -2,8 +2,10 @@ Originally forked from https://github.com/SleepyMario/phantombot-docker and fixe
 Modified greatly to work on 3.2.0 version changes. Wrapper.sh is based on code from https://github.com/aldovc/phantombot
 
 First time run as interactive if you have no existing config:
-docker run -it -v /realpath:/phantombot/config -v /etc/localtime:/etc/localtime:ro --net=host daevien/phantombot
 
+```
+docker run -it -v /realpath:/phantombot/config -v /etc/localtime:/etc/localtime:ro --net=host daevien/phantombot
+```
 
 Example docker-compose.yml once a config is supplied:
 

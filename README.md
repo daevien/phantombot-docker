@@ -1,4 +1,11 @@
-Originally forked from https://github.com/SleepyMario/phantombot-docker and fixed to run launch-service.sh instead of launch.sh to fix console spam. Modified greatly to work on 3.2.0 version changes
+Originally forked from https://github.com/SleepyMario/phantombot-docker and fixed to run launch-service.sh instead of launch.sh to fix console spam. Modified greatly to work on 3.2.0 version changes.
+
+
+First time run as interactive if you have no existing config:
+
+docker run -it -v /realpath:/phantombot/config -v /etc/localtime:/etc/localtime:ro --net=host daevien/phantombot
+
+Old info follows, this is not current. Will work on updating it.
 
 # What is this?
 * Docker container

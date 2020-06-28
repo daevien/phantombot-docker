@@ -1,10 +1,45 @@
-Originally forked from https://github.com/SleepyMario/phantombot-docker and fixed to run launch-service.sh instead of launch.sh to fix console spam. Modified greatly to work on 3.2.0 version changes.
-
+Originally forked from https://github.com/SleepyMario/phantombot-docker and fixed to run launch-service.sh instead of launch.sh to fix console spam.
+Modified greatly to work on 3.2.0 version changes. Wrapper.sh is based on code from https://github.com/aldovc/phantombot
 
 First time run as interactive if you have no existing config:
-
 docker run -it -v /realpath:/phantombot/config -v /etc/localtime:/etc/localtime:ro --net=host daevien/phantombot
 
+
+Example docker-compose.yml once a config is supplied:
+
+version: "3.7"
+
+services:
+    phantombot-ghostofsilverhand:
+      container_name: ghostofsilverhand
+      volumes:
+        - '/docker/pb/ghostofsilverhand:/phantombot/config'
+        - '/etc/localtime:/etc/localtime:ro'
+      environment:
+        - APIOAUTH=data_goes_here
+        - BASEPORT=25000
+        - CHANNEL=owner
+        - OWNER=owner        
+	- MSGLIMIT30=19.0
+        - MUSICENABLE=true
+        - OAUTH=data_goes_here
+        - PANELPASSWORD=password
+        - PANELUSER=username
+        - USEHTTPS=false
+        - USER=botname
+        - WEBAUTH=data_goes_here
+        - WEBAUTHRO=data_goes_here
+        - WEBENABLE=true
+        - WHISPERLIMIT60=60.0
+        - YTAUTH=data_goes_here
+        - YTAUTHRO=data_goes_here
+      ports:
+        - 25000:25000
+        - 25003:25003
+        - 25004:25004  
+      image: 'daevien/phantombot'
+      
+      
 Old info follows, this is not current. Will work on updating it.
 
 # What is this?

@@ -1,4 +1,4 @@
-Originally forked from https://github.com/SleepyMario/phantombot-docker and fixed to run launch-service.sh instead of launch.sh to fix console spam
+Originally forked from https://github.com/SleepyMario/phantombot-docker and fixed to run launch-service.sh instead of launch.sh to fix console spam. Modified greatly to work on 3.2.0 version changes
 
 # What is this?
 * Docker container

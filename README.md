@@ -7,6 +7,7 @@ docker run -it -v /realpath:/phantombot/config -v /etc/localtime:/etc/localtime:
 
 Example docker-compose.yml once a config is supplied:
 
+```
 version: "3.7"
 
 services:
@@ -38,7 +39,7 @@ services:
         - 25003:25003
         - 25004:25004  
       image: 'daevien/phantombot'
-      
+```      
       
 Old info follows, this is not current. Will work on updating it.
 

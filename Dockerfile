@@ -3,7 +3,7 @@ FROM openjdk:11-jre-slim
 LABEL maintainer "Daevien <github@daevien.com>"
 
 # environment variables
-ARG PV=3.2.2
+ARG PV=3.2.3
 ARG DATE="`/bin/date +\%Y-\%m-\%d-\%H_\%M_\%S_\%3N`"
 
 # Install Dependencies
